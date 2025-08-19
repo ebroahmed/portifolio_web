@@ -1,40 +1,33 @@
 // lib/pages/projects_page.dart
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/model/project_model.dart';
+
 import '../widgets/project_card.dart';
 
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({super.key});
 
-  // 🔁 Replace with your real data (GitHub/YouTube/Release links)
   List<Project> get _projects => const [
     Project(
-      title: 'App 1 – Your Title',
-      description:
-          'Short description about what this app does and the tech used (Flutter, Riverpod, Firebase, etc).',
-      image: 'https://picsum.photos/seed/app1/1200/675', // or 'assets/app1.png'
-      githubUrl: 'https://github.com/your-user/your-repo-1',
-      youtubeUrl: 'https://www.youtube.com/watch?v=YOUR_VIDEO_1',
-      releaseUrl:
-          'https://github.com/your-user/your-repo-1/releases', // or a web demo link
+      title: "App 1 – Shoes Store",
+      description: "An e-commerce Flutter app with Provider state management.",
+      images: ["assets/app1_1.png", "assets/app1_2.png", "assets/app1_3.png"],
+      githubUrl: "https://github.com/youruser/shoes_app_flutter",
+      youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_1",
+      releaseUrl: "https://github.com/youruser/shoes_app_flutter/releases",
     ),
     Project(
-      title: 'App 2 – Your Title',
-      description:
-          'Brief description highlighting features and your role (UI/State mgmt/Testing).',
-      image: 'https://picsum.photos/seed/app2/1200/675',
-      githubUrl: 'https://github.com/your-user/your-repo-2',
-      youtubeUrl: 'https://www.youtube.com/watch?v=YOUR_VIDEO_2',
-      releaseUrl: 'https://github.com/your-user/your-repo-2/releases',
+      title: "App 2 – Audio Player",
+      description: "A Flutter audio player app with Firebase integration.",
+      images: ["assets/app2_1.png", "assets/app2_2.png"],
+      githubUrl: "https://github.com/youruser/audio_player_app",
+      youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_2",
     ),
     Project(
-      title: 'App 3 – Your Title',
-      description:
-          'Mention problems solved, libraries used, and performance or testing notes.',
-      image: 'https://picsum.photos/seed/app3/1200/675',
-      githubUrl: 'https://github.com/your-user/your-repo-3',
-      youtubeUrl: 'https://www.youtube.com/watch?v=YOUR_VIDEO_3',
-      releaseUrl: 'https://github.com/your-user/your-repo-3/releases',
+      title: "App 3 – Hotel Booking",
+      description: "A responsive hotel booking app built with Flutter Web.",
+      images: ["assets/app3_1.png", "assets/app3_2.png", "assets/app3_3.png"],
+      githubUrl: "https://github.com/youruser/hotel_booking_app",
     ),
   ];
 
