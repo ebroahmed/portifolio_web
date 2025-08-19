@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           CircleAvatar(
             radius: 200,
             backgroundImage: AssetImage(
-              "assets/profile.jpg",
+              "assets/images/portfolio-profile.png",
             ), // add your image in assets
           ),
           const SizedBox(width: 60),
