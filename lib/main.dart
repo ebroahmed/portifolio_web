@@ -49,9 +49,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
       home: Builder(
         builder: (context) {
           return Scaffold(
-            endDrawer: navBar.buildDrawer(
-              context,
-            ), // ✅ Drawer for small screens
+            endDrawer: navBar.buildDrawer(context),
             body: Column(
               children: [
                 navBar,
