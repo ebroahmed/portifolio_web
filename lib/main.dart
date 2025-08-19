@@ -23,34 +23,43 @@ class _PortfolioAppState extends State<PortfolioApp> {
   Widget _getPage(String page) {
     switch (page) {
       case "Projects":
-        return ProjectsPage();
+        return const ProjectsPage();
       case "About":
-        return AboutPage();
+        return const AboutPage();
       case "Contact":
-        return ContactPage();
+        return const ContactPage();
       default:
-        return HomePage();
+        return const HomePage();
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final navBar = NavBar(
+      onNavItemTapped: (page) {
+        setState(() {
+          _selectedPage = page;
+        });
+      },
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Portfolio - Ebrahim Ahmed",
-      home: Scaffold(
-        body: Column(
-          children: [
-            NavBar(
-              onNavItemTapped: (page) {
-                setState(() {
-                  _selectedPage = page;
-                });
-              },
+      home: Builder(
+        builder: (context) {
+          return Scaffold(
+            endDrawer: navBar.buildDrawer(
+              context,
+            ), // ✅ Drawer for small screens
+            body: Column(
+              children: [
+                navBar,
+                Expanded(child: _getPage(_selectedPage)),
+              ],
             ),
-            Expanded(child: _getPage(_selectedPage)),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
