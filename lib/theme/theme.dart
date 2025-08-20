@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 final theme = ThemeData(
   colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(230, 1, 25, 44)),
 
-  textTheme: GoogleFonts.nunitoSansTextTheme(),
+  textTheme: GoogleFonts.openSansTextTheme(),
 
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(

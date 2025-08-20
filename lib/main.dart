@@ -51,16 +51,14 @@ class _PortfolioAppState extends State<PortfolioApp> {
       theme: theme,
       home: Builder(
         builder: (context) {
-          return AppBackground(
-            child: Scaffold(
-              backgroundColor: Colors.transparent,
-              endDrawer: navBar.buildDrawer(context),
-              body: Column(
-                children: [
-                  navBar,
-                  Expanded(child: _getPage(_selectedPage)),
-                ],
-              ),
+          return Scaffold(
+            backgroundColor: Colors.transparent,
+            endDrawer: navBar.buildDrawer(context),
+            body: Column(
+              children: [
+                navBar,
+                Expanded(child: _getPage(_selectedPage)),
+              ],
             ),
           );
         },
