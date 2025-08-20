@@ -13,7 +13,6 @@ class HomePage extends StatelessWidget {
         // Define breakpoints
         bool isMobile = maxWidth < 600;
         bool isTablet = maxWidth >= 600 && maxWidth < 1024;
-        bool isDesktop = maxWidth >= 1024;
 
         return Container(
           width: double.infinity,
@@ -50,6 +49,7 @@ class HomePage extends StatelessWidget {
                   Text(
                     "I'm Ebrahim Ahmed \nA Flutter Developer.",
                     style: GoogleFonts.openSans(
+                      color: Theme.of(context).colorScheme.onPrimary,
                       fontSize: isMobile
                           ? 24
                           : isTablet
@@ -62,12 +62,12 @@ class HomePage extends StatelessWidget {
                   Text(
                     "A Flutter Developer with a passion for building\nmodern, responsive mobile and web applications.",
                     style: TextStyle(
+                      color: Theme.of(context).colorScheme.onPrimaryFixed,
                       fontSize: isMobile
                           ? 16
                           : isTablet
                           ? 18
                           : 20,
-                      color: Colors.black54,
                     ),
                   ),
                   const SizedBox(height: 32),
