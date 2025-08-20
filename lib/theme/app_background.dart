@@ -10,12 +10,9 @@ class AppBackground extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Theme.of(context).colorScheme.onPrimaryFixedVariant,
-            Theme.of(context).colorScheme.primary,
-          ],
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
+          colors: [Colors.black, Colors.black38],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
       ),
       child: child,

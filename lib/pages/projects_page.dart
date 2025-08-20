@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/model/project_model.dart';
+import 'package:portfolio_web/theme/app_background.dart';
 import 'package:portfolio_web/widgets/projects_grid.dart';
 
 class ProjectsPage extends StatelessWidget {
@@ -22,11 +23,14 @@ class ProjectsPage extends StatelessWidget {
       // add more Project objects here
     ];
 
-    return Scaffold(
-      appBar: AppBar(title: const Text("Projects")),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ProjectGrid(projects: projects),
+    return AppBackground(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(title: const Text("Projects")),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ProjectGrid(projects: projects),
+        ),
       ),
     );
   }

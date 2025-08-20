@@ -1,5 +1,7 @@
 // lib/main.dart
 import 'package:flutter/material.dart';
+import 'package:portfolio_web/theme/app_background.dart';
+import 'package:portfolio_web/theme/theme.dart';
 import 'pages/home_page.dart';
 import 'pages/projects_page.dart';
 import 'pages/about_page.dart';
@@ -46,16 +48,19 @@ class _PortfolioAppState extends State<PortfolioApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Portfolio - Ebrahim Ahmed",
-
+      theme: theme,
       home: Builder(
         builder: (context) {
-          return Scaffold(
-            endDrawer: navBar.buildDrawer(context),
-            body: Column(
-              children: [
-                navBar,
-                Expanded(child: _getPage(_selectedPage)),
-              ],
+          return AppBackground(
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              endDrawer: navBar.buildDrawer(context),
+              body: Column(
+                children: [
+                  navBar,
+                  Expanded(child: _getPage(_selectedPage)),
+                ],
+              ),
             ),
           );
         },
