@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_web/widgets/hover_drawer_item.dart';
+import 'package:portfolio_web/widgets/hover_nav_item.dart';
 
 class NavBar extends StatelessWidget {
   final Function(String) onNavItemTapped;
@@ -19,6 +21,7 @@ class NavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          // Logo
           RichText(
             text: TextSpan(
               children: [
@@ -27,9 +30,7 @@ class NavBar extends StatelessWidget {
                   style: GoogleFonts.bungeeShade(
                     fontSize: 30, // Bigger font size
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(
-                      context,
-                    ).colorScheme.primary, // Highlight color
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 TextSpan(
@@ -48,7 +49,7 @@ class NavBar extends StatelessWidget {
           if (isDesktop)
             Row(
               children: menuItems.map((item) {
-                return _navItem(context, item);
+                return HoverNavItem(title: item, onTap: onNavItemTapped);
               }).toList(),
             )
           else
@@ -60,21 +61,6 @@ class NavBar extends StatelessWidget {
               },
             ),
         ],
-      ),
-    );
-  }
-
-  Widget _navItem(BuildContext context, String title) {
-    return InkWell(
-      onTap: () {
-        onNavItemTapped(title);
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Text(
-          title,
-          style: const TextStyle(fontSize: 16, color: Colors.white),
-        ),
       ),
     );
   }
@@ -108,8 +94,8 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ...menuItems.map((item) {
-            return ListTile(
-              title: Text(item, style: const TextStyle(color: Colors.white)),
+            return HoverDrawerItem(
+              title: item,
               onTap: () {
                 Navigator.pop(context); // close drawer
                 onNavItemTapped(item);
