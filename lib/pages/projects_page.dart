@@ -72,7 +72,13 @@ class ProjectsPage extends StatelessWidget {
     return AppBackground(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(title: const Text("Projects")),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Text(
+            "Projects",
+            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+          ),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ProjectGrid(projects: projects),

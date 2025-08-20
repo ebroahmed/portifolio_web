@@ -21,7 +21,7 @@ class ProjectCard extends StatelessWidget {
           height: 800,
           width: 600,
           child: Card(
-            color: Theme.of(context).colorScheme.onPrimary,
+            color: Theme.of(context).colorScheme.secondaryFixedDim,
             elevation: 3,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
@@ -251,6 +251,7 @@ class ProjectCard extends StatelessWidget {
         Text(
           project.title,
           style: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimaryFixed,
             fontSize: isMobile
                 ? 16
                 : isTablet
@@ -262,7 +263,10 @@ class ProjectCard extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           project.description,
-          style: TextStyle(fontSize: isMobile ? 13 : 14, color: Colors.black87),
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onSecondaryFixedVariant,
+            fontSize: isMobile ? 13 : 14,
+          ),
         ),
         const SizedBox(height: 16),
         Wrap(
@@ -296,6 +300,10 @@ class ProjectCard extends StatelessWidget {
   /// button builder
   Widget _linkButton(IconData icon, String label, String url) {
     return OutlinedButton.icon(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: Color.fromARGB(230, 1, 25, 44),
+        backgroundColor: Colors.white,
+      ),
       onPressed: () async {
         final uri = Uri.parse(url);
         if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
