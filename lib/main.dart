@@ -46,6 +46,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Portfolio - Ebrahim Ahmed",
+
       home: Builder(
         builder: (context) {
           return Scaffold(
