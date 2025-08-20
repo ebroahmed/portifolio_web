@@ -1,67 +1,108 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 64),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            radius: 200,
-            backgroundImage: AssetImage(
-              "assets/images/portfolio-profile.png",
-            ), // add your image in assets
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double maxWidth = constraints.maxWidth;
+
+        // Define breakpoints
+        bool isMobile = maxWidth < 600;
+        bool isTablet = maxWidth >= 600 && maxWidth < 1024;
+        bool isDesktop = maxWidth >= 1024;
+
+        return Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(
+            horizontal: isMobile ? 16 : 32,
+            vertical: isMobile ? 32 : 64,
           ),
-          const SizedBox(width: 60),
-
-          Column(
+          child: Flex(
+            direction: isMobile ? Axis.vertical : Axis.horizontal,
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                "Ebrahim Ahmed",
-                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              // Profile Image
+              CircleAvatar(
+                radius: isMobile
+                    ? 80
+                    : isTablet
+                    ? 150
+                    : 200,
+                backgroundImage: AssetImage(
+                  "assets/images/portfolio-profile.png",
+                ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(width: isMobile ? 0 : 60, height: isMobile ? 24 : 0),
 
-              const Text(
-                "Flutter Developer",
-                style: TextStyle(fontSize: 20, color: Colors.black54),
-              ),
-
-              const SizedBox(height: 32),
-
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue.shade800,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
-                    vertical: 16,
+              // Texts + Button
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: isMobile
+                    ? CrossAxisAlignment.center
+                    : CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "I'm Ebrahim Ahmed \nA Flutter Developer.",
+                    style: GoogleFonts.openSans(
+                      fontSize: isMobile
+                          ? 24
+                          : isTablet
+                          ? 32
+                          : 36,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                  const SizedBox(height: 8),
+                  Text(
+                    "A Flutter Developer with a passion for building\nmodern, responsive mobile and web applications.",
+                    style: TextStyle(
+                      fontSize: isMobile
+                          ? 16
+                          : isTablet
+                          ? 18
+                          : 20,
+                      color: Colors.black54,
+                    ),
                   ),
-                ),
-                onPressed: () {
-                  // For now, just show snackbar
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Scroll to Projects Section")),
-                  );
-                },
-                child: const Text(
-                  "See My Work",
-                  style: TextStyle(fontSize: 18, color: Colors.white),
-                ),
+                  const SizedBox(height: 32),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue.shade800,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: isMobile ? 16 : 24,
+                        vertical: isMobile ? 12 : 16,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Scroll to Projects Section"),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "See My Work",
+                      style: TextStyle(
+                        fontSize: isMobile ? 16 : 18,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
