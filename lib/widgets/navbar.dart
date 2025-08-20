@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NavBar extends StatelessWidget {
   final Function(String) onNavItemTapped;
@@ -18,13 +19,28 @@ class NavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Logo
-          const Text(
-            "My Portfolio",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: "E", // First letter
+                  style: GoogleFonts.bungeeShade(
+                    fontSize: 30, // Bigger font size
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.primary, // Highlight color
+                  ),
+                ),
+                TextSpan(
+                  text: "BRAHIM", // Rest of the text
+                  style: GoogleFonts.dancingScript(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
           ),
 
@@ -69,11 +85,26 @@ class NavBar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black54),
-            child: Text(
-              "My Portfolio",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.onPrimaryFixedVariant,
+            ),
+            child: TextButton.icon(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.work,
+                size: 70,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+              label: Text(
+                'My Portfolio',
+                style: GoogleFonts.dancingScript(
+                  fontSize: 20,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+              ),
             ),
           ),
           ...menuItems.map((item) {
