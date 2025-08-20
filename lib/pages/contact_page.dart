@@ -20,48 +20,79 @@ class ContactPage extends StatelessWidget {
     return AppBackground(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(title: const Text("Contact Me"), centerTitle: true),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Text(
+            "Contact Me",
+            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+          ),
+        ),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Let’s Connect!",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                Text(
+                  "You can contact me on the following platforms.",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 20),
 
                 // Email
                 ElevatedButton.icon(
-                  onPressed: () => _launchURL("mailto:your_email@example.com"),
+                  onPressed: () => _launchURL("ebrahimahmed804853@gmail.com"),
                   icon: const Icon(Icons.email),
                   label: const Text("Email Me"),
                 ),
                 const SizedBox(height: 20),
 
                 // GitHub
-                IconButton(
-                  icon: Icon(Bootstrap.github, size: 30, color: Colors.black),
-                  onPressed: () =>
-                      _launchURL("https://github.com/your-username"),
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  icon: Icon(Bootstrap.github, size: 28, color: Colors.black),
+                  onPressed: () => _launchURL("https://github.com/ebroahmed/"),
+                  label: const Text(
+                    "Github",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 SizedBox(height: 10),
 
                 // LinkedIn
-                IconButton(
-                  icon: Icon(Bootstrap.linkedin, size: 30, color: Colors.blue),
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  icon: Icon(Bootstrap.linkedin, size: 28, color: Colors.blue),
                   onPressed: () =>
                       _launchURL("https://linkedin.com/in/your-profile"),
+                  label: const Text(
+                    "Linkedin",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 SizedBox(height: 10),
 
                 // YouTube
-                IconButton(
-                  icon: Icon(Bootstrap.youtube, size: 40, color: Colors.red),
-                  onPressed: () =>
-                      _launchURL("https://youtube.com/@yourchannel"),
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  icon: Icon(Bootstrap.youtube, size: 28, color: Colors.red),
+                  onPressed: () => _launchURL(
+                    "https://youtube.com/@flutterhacks-eb02?si=FAHl6cfAdkPdsOhc",
+                  ),
+                  label: const Text(
+                    "Youtube",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ],
             ),

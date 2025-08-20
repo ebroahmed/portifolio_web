@@ -17,7 +17,7 @@ class NavBar extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-      color: Colors.black87,
+      color: Colors.black,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -73,7 +73,7 @@ class NavBar extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.onPrimaryFixedVariant,
+              color: Theme.of(context).colorScheme.onPrimaryFixed,
             ),
             child: TextButton.icon(
               onPressed: () {

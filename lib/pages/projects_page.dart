@@ -73,6 +73,9 @@ class ProjectsPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
           backgroundColor: Colors.transparent,
           title: Text(
             "Projects",
