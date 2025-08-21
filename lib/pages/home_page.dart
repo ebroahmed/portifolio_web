@@ -64,6 +64,7 @@ class HomePage extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
+                        textAlign: TextAlign.center,
                         "A Flutter Developer with a passion for building\nmodern, responsive mobile and web applications.",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
