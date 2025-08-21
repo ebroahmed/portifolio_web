@@ -25,12 +25,12 @@ class AboutPage extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                "Hello! 👋 I'm Ebrahim Ahmed \nA passionate Computer Science graduate (2025) from Jimma University, Ethiopia.\n"
+                "Hello! 👋 I'm Ebrahim Ahmed, \nA passionate Computer Science graduate (2025) from Jimma University, Ethiopia.\n"
                 "I specialize in Flutter development, where I build modern mobile apps, web apps, \nand Flutter web solutions integrated with Firebase for powerful and scalable backends.\nOver the past 1.5 years, I’ve been sharpening my skills by working on multiple personal projects, \nwhich helped me gain practical, hands-on experience beyond the classroom. "
                 "I love transforming ideas \ninto functional applications with clean UI, smooth user experiences, and efficient code. \nMy long-term goal is to keep growing as a software developer while contributing impactful \nprojects to the tech community.",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.onPrimary,
-                  fontSize: 16,
+                  fontSize: 15,
                   height: 1.5,
                 ),
               ),

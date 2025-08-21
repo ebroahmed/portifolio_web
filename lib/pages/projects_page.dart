@@ -43,7 +43,7 @@ class ProjectsPage extends StatelessWidget {
           "assets/screenshots/audio-player/profile.jpg",
         ],
         githubUrl: "https://github.com/ebroahmed/audio_player_app",
-        youtubeUrl: "https://youtube.com/watch?v=xxx",
+        youtubeUrl: "https://youtu.be/UBdXx22nnt0?si=0vsOF06ji1xwXMWv",
         releaseUrl:
             "https://github.com/ebroahmed/audio_player_app/releases/download/v1.0.0/audio_player_app.apk",
       ),
@@ -61,7 +61,7 @@ class ProjectsPage extends StatelessWidget {
           "assets/screenshots/quiz/history.jpg",
         ],
         githubUrl: "https://github.com/ebroahmed/quiz_app",
-        youtubeUrl: "https://youtube.com/watch?v=xxx",
+        youtubeUrl: "https://youtu.be/f12kHED0Lx4?si=5WROUnR3Q789WyCC",
         releaseUrl:
             "https://github.com/ebroahmed/quiz_app/releases/download/v1.0.0%2B1/quiz_app.apk",
       ),

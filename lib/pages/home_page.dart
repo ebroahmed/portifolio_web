@@ -66,6 +66,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         "A Flutter Developer with a passion for building\nmodern, responsive mobile and web applications.",
                         style: TextStyle(
+                          fontWeight: FontWeight.bold,
                           color: Theme.of(context).colorScheme.onPrimaryFixed,
                           fontSize: isMobile
                               ? 16
